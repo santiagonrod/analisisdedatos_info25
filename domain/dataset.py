@@ -31,6 +31,8 @@ class Dataset(ABC):
         
         if self.datos.duplicated().sum() > 0:
             print("Filas duplicadas detectadas.")
+
+        return True
         
 
     def transformar_datos(self):
