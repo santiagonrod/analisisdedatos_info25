@@ -41,6 +41,10 @@ class Dataset(ABC):
             self.__datos = self.datos.drop_duplicates()
             for col in self.datos.select_dtypes(include="object").columns:
                 self.__datos[col] = self.datos[col].astype(str).str.strip()
-    
+            
+            print("Transformaciones aplicadas")
+        else: 
+            print("No hay datos para transformar")
+     
     def mostrar_resumen(self):
         pass

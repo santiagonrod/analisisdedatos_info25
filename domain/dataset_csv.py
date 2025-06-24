@@ -13,7 +13,7 @@ class DatasetCSV(Dataset):
 
             if self.validar_datos():
                 print("Datos CSV validados")
-                # self.transformar_datos()
+                self.transformar_datos()
         
         except Exception as e:
             return(f"Error cargando CSV: {e}")

@@ -13,7 +13,7 @@ class DatasetExcel(Dataset):
 
             if self.validar_datos():
                 print("Datos excel validados")
-                # self.transformar_datos()
+                self.transformar_datos()
         
         except Exception as e:
             return(f"Error cargando Excel: {e}")
