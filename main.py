@@ -14,3 +14,4 @@ excel = DatasetExcel(excel_path)
 excel.cargar_datos()
 
 api = DatasetAPI("https://apis.datos.gob.ar/georef/api/provincias")
+api.cargar_datos()

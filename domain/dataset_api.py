@@ -27,6 +27,7 @@ class DatasetAPI(Dataset):
 
                 self.datos = df
                 print("API cargada")
+                print(self.datos)
 
                 if self.validar_datos():
                     self.transformar_datos()
