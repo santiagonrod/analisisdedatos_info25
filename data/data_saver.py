@@ -1,5 +1,7 @@
-import sqlite3
 import pandas as pd
+from sqlalchemy import create_engine
+from sqlalchemy.exc import SQLAlchemyError
+from decouple import config
 
 
 class DataSaver:
@@ -18,7 +20,9 @@ class DataSaver:
         try:
             conn = sqlite3.connect(self.__db_path)
             df.to_sql(nombre_tabla, conn, if_exists='replace', index=False)
-            
+            conn.close()
+            print(f"Datos guardados en tabla: {nombre_tabla}")
+
 
         except Exception as e:
             print(f"Error guardando datos: {e}")

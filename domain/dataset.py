@@ -47,4 +47,5 @@ class Dataset(ABC):
             print("No hay datos para transformar")
      
     def mostrar_resumen(self):
-        pass
+        return print(self.datos.describe(include='all') if self.datos is not None else "No hay datos")
+        
