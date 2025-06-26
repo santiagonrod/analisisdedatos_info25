@@ -13,7 +13,7 @@ class DatasetJSON(Dataset):
 
         print(f'Cargando datos JSON...')        
         try:
-            df = pd.read_json(self.fuente)
+            df = pd.read_json(self.fuente, lines=True)
             self.datos = df 
             print("JSON cargado")
 
