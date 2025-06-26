@@ -1,11 +1,12 @@
 from domain.dataset import Dataset
 import pandas as pd
 
-class DatasetExcel(Dataset):
+class DatasetParquet(Dataset):
     def __init__(self, fuente):
         super().__init__(fuente)
 
     def cargar_datos(self):
+        print(f'Cargando datos parquet...')
         try:
             df = pd.read_parquet(self.fuente)
             self.datos = df

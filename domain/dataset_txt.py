@@ -1,11 +1,13 @@
 from domain.dataset import Dataset
 import pandas as pd
 
-class DatasetExcel(Dataset):
+class DatasetTXT(Dataset):
     def __init__(self, fuente):
         super().__init__(fuente)
 
     def cargar_datos(self):
+        print(f'Cargando datos txt...')
+
         try:
             df = pd.read_csv(self.fuente, sep="\t")
             self.datos = df
