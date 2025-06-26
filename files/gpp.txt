@@ -1,0 +1,51 @@
+nombre	pais	partidos	goles	goles_por_partido
+Lionel Messi	Argentina	1050	820	0.78
+Cristiano Ronaldo	Portugal	1185	873	0.74
+Pelé	Brasil	831	767	0.92
+Ferenc Puskás	Hungría	754	746	0.99
+Gerd Müller	Alemania	793	735	0.93
+Robert Lewandowski	Polonia	835	612	0.73
+Zlatan Ibrahimović	Suecia	956	573	0.60
+Luis Suárez	Uruguay	859	513	0.60
+Karim Benzema	Francia	880	442	0.50
+Romário	Brasil	820	749	0.91
+Alfredo Di Stéfano	Argentina/España	706	509	0.72
+Thierry Henry	Francia	917	411	0.45
+Wayne Rooney	Inglaterra	884	366	0.41
+Sergio Agüero	Argentina	671	385	0.57
+Edinson Cavani	Uruguay	775	423	0.55
+Neymar Jr.	Brasil	634	457	0.72
+Kylian Mbappé	Francia	375	303	0.81
+David Villa	España	752	376	0.50
+Samuel Eto'o	Camerún	756	373	0.49
+Didier Drogba	Costa de Marfil	679	296	0.44
+Hugo Sánchez	México	703	394	0.56
+Paolo Guerrero	Perú	570	231	0.41
+Radamel Falcao	Colombia	620	324	0.52
+Miroslav Klose	Alemania	857	347	0.40
+Claudio Pizarro	Perú	850	317	0.37
+Del Piero	Italia	845	316	0.37
+Francesco Totti	Italia	912	307	0.34
+Gabriel Batistuta	Argentina	580	296	0.51
+Alan Shearer	Inglaterra	733	379	0.52
+Fabio Quagliarella	Italia	780	265	0.34
+Marco van Basten	Países Bajos	490	277	0.57
+Pippo Inzaghi	Italia	723	313	0.43
+George Weah	Liberia	610	219	0.36
+Gabriel Jesus	Brasil	400	170	0.43
+Ciro Immobile	Italia	590	281	0.48
+Javier Hernández	México	621	222	0.36
+Mohamed Salah	Egipto	510	260	0.51
+Sadio Mané	Senegal	570	240	0.42
+Erling Haaland	Noruega	245	214	0.87
+Harry Kane	Inglaterra	535	300	0.56
+Robin van Persie	Países Bajos	600	281	0.47
+Carlos Tévez	Argentina	747	277	0.37
+Fernando Torres	España	724	262	0.36
+Raúl González	España	932	386	0.41
+Diego Forlán	Uruguay	690	272	0.39
+Ivan Zamorano	Chile	618	257	0.42
+Hernán Crespo	Argentina	646	275	0.43
+Alexis Sánchez	Chile	760	212	0.28
+Teófilo Cubillas	Perú	505	185	0.37
+Jean-Pierre Papin	Francia	610	303	0.50
