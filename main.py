@@ -43,7 +43,7 @@ def procesar_archivos():
             dataset = clase_dataset(ruta)
             try:
                 dataset.cargar_datos()
-                dataset.mostrar_resumen()
+                #dataset.mostrar_resumen()
                 db.guardar_dataframe(dataset.datos, nombre)
                 
                 resultados.append(f"{archivo}: cargado con éxito.")

@@ -32,7 +32,7 @@ class Dataset(ABC):
         nulos = self.datos.isnull().sum().sum()
         if nulos > 0:
             print(f"{nulos} valores nulos encontrados")
-
+        
         duplicados = self.datos.duplicated().sum()
         if duplicados > 0:
             print(f"{duplicados} filas duplicadas encontradas")
@@ -44,9 +44,10 @@ class Dataset(ABC):
         columnas_unicas = [col for col in self.datos.columns if self.datos[col].nunique() <= 1]
         if columnas_unicas:
             print(f"Columnas con un único valor: {columnas_unicas}")
+        
+        print(f'Validacion finalizada')
 
         return True
-
         
 
     def transformar_datos(self):
