@@ -26,10 +26,18 @@ class DataSaver:
             return
         
         try:
+            df = df.copy()
+            for col in df.columns:
+                if df[col].apply(lambda x: isinstance(x, (list, dict))).any():
+                    df[col] = df[col].astype(str)
+
+            print(f'Guardando en db...')
+            print(df.shape)
             df.to_sql(nombre_tabla, con=self.engine, if_exists='replace', index=False)
             print(f"Datos guardados en tabla: {nombre_tabla}")
 
 
         except SQLAlchemyError as e:
             print(f"Error guardando datos: {e}")
+            raise
 

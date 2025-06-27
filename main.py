@@ -17,6 +17,7 @@ EXTENSIONES = {
 }
 
 FILES_DIR = 'files'
+db = DataSaver()
 
 archivos = [f for f in os.listdir(FILES_DIR) if os.path.isfile(os.path.join(FILES_DIR, f))]
 
@@ -42,7 +43,9 @@ def procesar_archivos():
             dataset = clase_dataset(ruta)
             try:
                 dataset.cargar_datos()
-                #dataset.mostrar_resumen()
+                dataset.mostrar_resumen()
+                db.guardar_dataframe(dataset.datos, nombre)
+                
                 resultados.append(f"{archivo}: cargado con éxito.")
             except Exception as e:
                 resultados.append(f"{archivo}: error - {e}")
@@ -53,7 +56,6 @@ def procesar_archivos():
 
 procesar_archivos()
 
-# db = DataSaver()
 # db.guardar_dataframe(csv.datos, "w_mean_prod_csv")
 # db.guardar_dataframe(excel.datos, "ventas_csv")
 # db.guardar_dataframe(api.datos, "provincia_api")
