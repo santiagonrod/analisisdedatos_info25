@@ -12,7 +12,7 @@ class DatasetCSV(Dataset):
         print(f"Existe: {os.path.exists(self.fuente)}")
         print(f"Ruta absoluta: {os.path.abspath(self.fuente)}")
 
-        print(f'Cargando datos csv...')        
+        print(f'Cargando datos desde .csv...')        
         try:
             with open(self.fuente, 'rb') as f:
                 result = chardet.detect(f.read())

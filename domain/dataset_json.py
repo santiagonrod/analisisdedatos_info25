@@ -25,7 +25,7 @@ class DatasetJSON(Dataset):
                 warnings.simplefilter("ignore", category=UserWarning)
                 if isinstance(val, dict) and '$date' in val:
                     fecha = pd.to_datetime(val['$date'], errors="coerce")
-                #print(f'1 {fecha}')
+                    #print(f'1 {fecha}')
                 else:
                     fecha = pd.to_datetime(val, errors="coerce")
                     #print(f'2 {fecha}')
@@ -54,14 +54,11 @@ class DatasetJSON(Dataset):
                         if isinstance(val, str):
                             val = val.strip()
 
-                            # Si parece un JSON string, intentamos parsear
                             if self.es_posible_json(val):
                                 val = self.intentar_parsear(val)
 
-                        # Convertir fechas {'$date': ...} o strings a ISO
                         val = self.intentar_convertir_fecha(val)
 
-                        # Serializar listas/dicts a JSON string
                         if isinstance(val, (list, dict)):
                             val = json.dumps(val, ensure_ascii=False)
 
@@ -125,7 +122,7 @@ class DatasetJSON(Dataset):
         print(f"Existe: {os.path.exists(self.fuente)}")
         print(f"Ruta absoluta: {os.path.abspath(self.fuente)}")
 
-        print(f'Cargando datos JSON...')        
+        print(f'Cargando datos desde .json...')        
         try:
             df = pd.read_json(self.fuente, lines=True)
             self.datos = df 

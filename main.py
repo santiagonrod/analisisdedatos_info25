@@ -27,24 +27,27 @@ print(archivos)
 def procesar_archivos():
     resultados = []
 
-    print(f'Se detectaron {len(archivos)} archivos en la carpeta {FILES_DIR}')
+    print(f'Se detectó {len(archivos)} archivo(s) en la carpeta {FILES_DIR}')
 
-    for archivo in archivos:
-        print(f'{archivo}')
+    for i, archivo in enumerate(archivos, start=1):
+        print("\n" + "=" * 80)
+        print(f"{f'Procesando archivo {i}/{len(archivos)} : {archivo}':^80}")
+        print("=" * 80)
+
         ruta = os.path.join(FILES_DIR, archivo)
         nombre =  os.path.splitext(archivo)[0].lower()
         extension = os.path.splitext(archivo)[1].lower()
 
         clase_dataset = EXTENSIONES.get(extension)
 
-        print(f'{ruta}, {nombre}, {extension}, {clase_dataset}')
+        #print(f'{ruta}, {nombre}, {extension}, {clase_dataset}')
 
         if clase_dataset:
             dataset = clase_dataset(ruta)
             try:
                 dataset.cargar_datos()
                 #dataset.mostrar_resumen()
-                db.guardar_dataframe(dataset.datos, nombre)
+                db.guardar_dataframe(dataset.datos, nombre+f'{os.path.splitext(archivo)[1].lower().replace('.', '_')}')
                 
                 resultados.append(f"{archivo}: cargado con éxito.")
             except Exception as e:
@@ -55,7 +58,3 @@ def procesar_archivos():
     return resultados
 
 procesar_archivos()
-
-# db.guardar_dataframe(csv.datos, "w_mean_prod_csv")
-# db.guardar_dataframe(excel.datos, "ventas_csv")
-# db.guardar_dataframe(api.datos, "provincia_api")

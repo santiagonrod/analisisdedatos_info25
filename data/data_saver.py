@@ -33,6 +33,7 @@ class DataSaver:
 
             print(f'Guardando en db...')
             print(df.shape)
+            print(self.engine)
             df.to_sql(nombre_tabla, con=self.engine, if_exists='replace', index=False)
             print(f"Datos guardados en tabla: {nombre_tabla}")
 

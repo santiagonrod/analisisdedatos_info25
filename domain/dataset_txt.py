@@ -6,7 +6,7 @@ class DatasetTXT(Dataset):
         super().__init__(fuente)
 
     def cargar_datos(self):
-        print(f'Cargando datos txt...')
+        print(f'Cargando datos desde .txt...')
 
         try:
             df = pd.read_csv(self.fuente, sep="\t")

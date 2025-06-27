@@ -27,7 +27,8 @@ class Dataset(ABC):
         if self.datos is None or self.datos.empty:
             raise ValueError("Archivo vacío o no cargado correctamente")
 
-        print(f"Tipos de datos detectados: {self.datos.dtypes}")
+        print(f"Tipos de datos detectados: ")
+        print(f'{self.datos.dtypes}')
 
         nulos = self.datos.isnull().sum().sum()
         if nulos > 0:
@@ -45,7 +46,7 @@ class Dataset(ABC):
         if columnas_unicas:
             print(f"Columnas con un único valor: {columnas_unicas}")
         
-        print(f'Validacion finalizada')
+        print(f'Validacion finalizada: ')
 
         return True
         
