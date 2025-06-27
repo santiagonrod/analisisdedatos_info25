@@ -31,17 +31,18 @@ def procesar_archivos():
     for archivo in archivos:
         print(f'{archivo}')
         ruta = os.path.join(FILES_DIR, archivo)
+        nombre =  os.path.splitext(archivo)[0].lower()
         extension = os.path.splitext(archivo)[1].lower()
 
         clase_dataset = EXTENSIONES.get(extension)
 
-        print(f'{ruta}, {extension}, {clase_dataset}')
+        print(f'{ruta}, {nombre}, {extension}, {clase_dataset}')
 
         if clase_dataset:
             dataset = clase_dataset(ruta)
             try:
                 dataset.cargar_datos()
-                dataset.mostrar_resumen()
+                #dataset.mostrar_resumen()
                 resultados.append(f"{archivo}: cargado con éxito.")
             except Exception as e:
                 resultados.append(f"{archivo}: error - {e}")
